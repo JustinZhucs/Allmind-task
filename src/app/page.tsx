@@ -58,7 +58,7 @@ export default function HomePage() {
             <p className="text-xl md:text-2xl max-w-3xl mb-8">
               At Massdriver, we believe in prevention, not permission.<br />
               <br />
-              Our platform lets "ops" teams encode their expertise and your organization's non-negotiables into preapproved self-service infrastructure powered by the IaC tools you already know.<br />
+              Our platform lets &ldquo;ops&rdquo; teams encode their expertise and your organization&apos;s non-negotiables into preapproved self-service infrastructure powered by the IaC tools you already know.<br />
               <br />
               Massdriver—Fast by default. Safe by design.
             </p>
@@ -92,7 +92,7 @@ export default function HomePage() {
                 <div className="text-sm font-medium text-gray-500 mb-2">2/3</div>
                 <h3 className="text-2xl font-bold mb-4">Ops Teams Publish Modules</h3>
                 <p className="text-lg mb-4">
-                  Bundled modules are published in the Massdriver Service Catalog, where developers can easily discover supported cloud services and applications with your organization's compliance, security, and guardrails in place.
+                  Bundled modules are published in the Massdriver Service Catalog, where developers can easily discover supported cloud services and applications with your organization&apos;s compliance, security, and guardrails in place.
                 </p>
                 <p className="font-bold">
                   A central repository for provisioning, policy, and cost controls of your cloud resources.
@@ -105,10 +105,10 @@ export default function HomePage() {
                 <div className="text-sm font-medium text-gray-500 mb-2">3/3</div>
                 <h3 className="text-2xl font-bold mb-4">Devs Diagram to Provision</h3>
                 <p className="text-lg mb-4">
-                  Developers diagram what they want and your IaC modules are used to provision. Developers don't have to copy Helm Charts or Terraform Modules. They don't have brittle IaC pipelines. Instead, Massdriver uses your modules to provision and builds ephemeral CI/CD pipelines behind the scenes based on the tooling <em>in</em> your modules.
+                  Developers diagram what they want and your IaC modules are used to provision. Developers don&apos;t have to copy Helm Charts or Terraform Modules. They don&apos;t have brittle IaC pipelines. Instead, Massdriver uses your modules to provision and builds ephemeral CI/CD pipelines behind the scenes based on the tooling <em>in</em> your modules.
                 </p>
                 <p className="font-bold">
-                  Say goodbye to 100's of brittle IaC pipelines.
+                  Say goodbye to 100&apos;s of brittle IaC pipelines.
                 </p>
               </div>
             </div>
@@ -124,7 +124,7 @@ export default function HomePage() {
         {/* Possibilities Section */}
         <section className="py-16 px-6 bg-white">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-12">See What's Possible with Massdriver's IaC-Powered Platform</h2>
+            <h2 className="text-3xl font-bold mb-12">See What&apos;s Possible with Massdriver&apos;s IaC-Powered Platform</h2>
             
             <div className="flex flex-wrap justify-center gap-8 mb-12">
               <div className="flex items-center">
@@ -158,13 +158,13 @@ export default function HomePage() {
                     <p className="text-sm text-gray-600">Principal Software Engineer</p>
                   </div>
                 </div>
-                <p className="mt-4 text-sm italic">AMD Global Telemedicine experienced an 89% reduction in "DevOps" tasks and saw ROI in about 10 days.</p>
+                <p className="mt-4 text-sm italic">AMD Global Telemedicine experienced an 89% reduction in &ldquo;DevOps&rdquo; tasks and saw ROI in about 10 days.</p>
                 <Link href="/case-study" className="text-blue-600 text-sm font-medium mt-2 inline-block">View AMD Case Study</Link>
               </div>
 
               {/* Testimonial 2 */}
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <p className="mb-4">Massdriver is a must for small teams that don't have the resources for a dedicated DevOps team, as it significantly simplifies and improves their deployment processes. It is also a great tool for bigger teams as it follows best practices when provisioning infrastructure and modernizes processes by using Infrastructure as Code.</p>
+                <p className="mb-4">Massdriver is a must for small teams that don&apos;t have the resources for a dedicated DevOps team, as it significantly simplifies and improves their deployment processes. It is also a great tool for bigger teams as it follows best practices when provisioning infrastructure and modernizes processes by using Infrastructure as Code.</p>
                 <div className="flex items-center">
                   <div className="ml-3">
                     <p className="font-medium">Ivan Ivanov</p>
@@ -177,7 +177,7 @@ export default function HomePage() {
 
               {/* Testimonial 3 */}
               <div className="bg-white p-6 rounded-lg shadow-md">
-                <p className="mb-4">We are partnering with innovative companies like Massdriver to help founders achieve more. As a part of Microsoft for Startups Founders Hub, startups can now receive access to Massdriver's productivity tools, designed to streamline cloud management and reduce infrastructure development time.</p>
+                <p className="mb-4">We are partnering with innovative companies like Massdriver to help founders achieve more. As a part of Microsoft for Startups Founders Hub, startups can now receive access to Massdriver&apos;s productivity tools, designed to streamline cloud management and reduce infrastructure development time.</p>
                 <div className="flex items-center">
                   <div className="ml-3">
                     <p className="font-medium">Kirk Safford</p>
@@ -199,7 +199,7 @@ export default function HomePage() {
             <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Cloud Service Catalog</h3>
-                <p className="mb-4">Your DevOps teams have a lot on their plate, don't lose another great teammate to burnout.</p>
+                <p className="mb-4">Your DevOps teams have a lot on their plate, don&apos;t lose another great teammate to burnout.</p>
                 <p className="mb-4">Enable developers to self-serve cloud infrastructure from approved IaC templates in a central catalog.</p>
                 <p className="mb-4">Developers drag, connect, and deploy. No more last minute Jira tickets to the DevOps team.</p>
               </div>
@@ -215,7 +215,7 @@ export default function HomePage() {
               </div>
               <div className="order-1 md:order-2">
                 <h3 className="text-2xl font-bold mb-4">Cost & Health Insights</h3>
-                <p className="mb-4">Get a clear view of your cloud's health and costs right where your developers manage their infrastructure.</p>
+                <p className="mb-4">Get a clear view of your cloud&apos;s health and costs right where your developers manage their infrastructure.</p>
                 <p className="mb-4">With real-time insights, you can make proactive adjustments, ensuring systems are efficient and cost-effective.</p>
                 <p className="mb-4">Never get caught with a surprise cloud bill again.</p>
               </div>
@@ -254,15 +254,15 @@ export default function HomePage() {
                   </div>
                   
                   <blockquote className="italic mb-6">
-                    Massdriver's platform has revolutionized our approach to infrastructure, saving us 89% of the time spent managing infrastructure. Our operation could upscale by an order of magnitude, if not two, and we would not be in crisis mode to hire somebody to manage infrastructure.
+                    Massdriver&apos;s platform has revolutionized our approach to infrastructure, saving us 89% of the time spent managing infrastructure. Our operation could upscale by an order of magnitude, if not two, and we would not be in crisis mode to hire somebody to manage infrastructure.
                   </blockquote>
                   
                   <p className="mb-6">
-                    Explore how AMD Global Telemedicine revolutionized their software deployment process, cutting down release effort by 89% with Massdriver's cloud solutions. This case study is a must-read for those aiming to scale efficiently and enhance team productivity through innovative cloud technology. Download now for key insights.
+                    Explore how AMD Global Telemedicine revolutionized their software deployment process, cutting down release effort by 89% with Massdriver&apos;s cloud solutions. This case study is a must-read for those aiming to scale efficiently and enhance team productivity through innovative cloud technology. Download now for key insights.
                   </p>
                   
                   <ul className="list-disc pl-5 mb-6">
-                    <li>Reduced software release effort by 89% with Massdriver's cloud solutions.</li>
+                    <li>Reduced software release effort by 89% with Massdriver&apos;s cloud solutions.</li>
                     <li>Managed a 100x workload surge without increasing engineering staff.</li>
                     <li>Improved team collaboration and productivity ninefold.</li>
                   </ul>
@@ -292,21 +292,21 @@ export default function HomePage() {
             <h2 className="text-3xl font-bold mb-8 text-center">We know the cloud</h2>
             
             <blockquote className="bg-white p-8 rounded-lg shadow-md mb-12">
-              <p className="italic mb-4">"We are partnering with innovative companies like Massdriver to help founders achieve more. As a part of Microsoft for Startups Founders Hub, startups can now receive access to Massdriver's productivity tools, designed to streamline cloud management and reduce infrastructure development time."</p>
+              <p className="italic mb-4">&ldquo;We are partnering with innovative companies like Massdriver to help founders achieve more. As a part of Microsoft for Startups Founders Hub, startups can now receive access to Massdriver&apos;s productivity tools, designed to streamline cloud management and reduce infrastructure development time.&rdquo;</p>
               <div>
                 <p className="font-bold">Kirk Safford</p>
                 <p>Director, Microsoft for Startups</p>
               </div>
             </blockquote>
             
-            <p className="text-center">Built by a team of world-class cloud certified experts. Massdriver has passed rigorous CIS benchmarks for your favorite cloud's partnership network.</p>
+            <p className="text-center">Built by a team of world-class cloud certified experts. Massdriver has passed rigorous CIS benchmarks for your favorite cloud&apos;s partnership network.</p>
           </div>
         </section>
 
         {/* CTA Section */}
         <section className="py-16 px-6 bg-white">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">We're confident Massdriver will transform how your team operates. Are you ready to simplify?</h2>
+            <h2 className="text-3xl font-bold mb-6">We&apos;re confident Massdriver will transform how your team operates. Are you ready to simplify?</h2>
             
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
               <Link href="/demo" className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium">Book a Demo</Link>
@@ -317,7 +317,7 @@ export default function HomePage() {
             <div className="bg-gray-100 p-6 rounded-lg inline-block">
               <p className="font-medium mb-2">Need help persuading your manager?</p>
               <p className="text-xl font-bold mb-4">Cut the red tape.</p>
-              <p className="mb-4">Download the Massdriver pitch deck to convince them it's time for true developer self-service.</p>
+              <p className="mb-4">Download the Massdriver pitch deck to convince them it&apos;s time for true developer self-service.</p>
               <Link href="/pitch-deck" className="text-blue-600 font-medium">Download the pitch deck</Link>
             </div>
           </div>
