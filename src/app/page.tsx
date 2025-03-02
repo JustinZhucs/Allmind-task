@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function HomePage() {
+  const [activeTab, setActiveTab] = useState(1);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header/Navigation */}
@@ -78,135 +83,113 @@ export default function HomePage() {
         </section>
 
         {/* How it Works Section */}
-        <section className="py-16 px-6 bg-gray-50">
+        <section className="py-16 px-6 bg-sky-950">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center">How it Works</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center text-white">How it Works</h2>
+            <div className="flex justify-center space-x-4 text-white mb-10">
+              <button 
+                className={`px-4 py-2 font-medium ${activeTab === 1 ? 'border-b-2 border-white' : ''}`}
+                onClick={() => setActiveTab(1)}
+              >
+                1. Code
+              </button>
+              <button 
+                className={`px-4 py-2 font-medium ${activeTab === 2 ? 'border-b-2 border-white' : ''}`}
+                onClick={() => setActiveTab(2)}
+              >
+                2. Publish
+              </button>
+              <button 
+                className={`px-4 py-2 font-medium ${activeTab === 3 ? 'border-b-2 border-white' : ''}`}
+                onClick={() => setActiveTab(3)}
+              >
+                3. Diagram
+              </button>
+            </div>
             
-            <div className="mb-16">
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <div className="text-sm font-medium text-gray-500 mb-2">1/3</div>
-                <h3 className="text-2xl font-bold mb-4">Ops Teams Write IaC</h3>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <p className="text-lg mb-4">
-                      DevOps and Platform teams use the infrastructure-as-code tools they know, such as Terraform / OpenTofu, Helm, or CloudFormation, and package them into use-case-specific modules with your policy tooling built in.
-                    </p>
-                    <p className="font-bold">
-                      Your IaC is no longer just config, its a functional software asset. Policy and cost tools are embedded, cutting down maintenance for Ops teams.
-                    </p>
-                  </div>
-                  <div className="relative">
-                    <Image 
-                      src="/code_screenshot.webp" 
-                      alt="Ops Teams Write IaC" 
-                      width={500} 
-                      height={300} 
-                      className="rounded-lg"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-16">
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <div className="text-sm font-medium text-gray-500 mb-2">2/3</div>
-                <h3 className="text-2xl font-bold mb-4">Ops Teams Publish Modules</h3>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div className="order-2 md:order-1">
-                    <Image 
-                      src="/publish.webp"
-                      alt="Ops Teams Publish Modules" 
-                      width={500} 
-                      height={300} 
-                      className="rounded-lg"
-                    />
-                  </div>
-                  <div className="order-1 md:order-2">
-                    <p className="text-lg mb-4">
-                      Bundled modules are published in the Massdriver Service Catalog, where developers can easily discover supported cloud services and applications with your organization&apos;s compliance, security, and guardrails in place.
-                    </p>
-                    <p className="font-bold">
-                      A central repository for provisioning, policy, and cost controls of your cloud resources.
-                    </p>
+            {activeTab === 1 && (
+              <div className="mb-16">
+                <div className="bg-white rounded-lg shadow-md p-8">
+                  <div className="text-sm font-medium text-gray-500 mb-2">1/3</div>
+                  <h3 className="text-2xl font-bold mb-4">Ops Teams Write IaC</h3>
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <p className="text-lg mb-4">
+                        DevOps and Platform teams use the infrastructure-as-code tools they know, such as Terraform / OpenTofu, Helm, or CloudFormation, and package them into use-case-specific modules with your policy tooling built in.
+                      </p>
+                      <p className="font-bold">
+                        Your IaC is no longer just config, its a functional software asset. Policy and cost tools are embedded, cutting down maintenance for Ops teams.
+                      </p>
+                    </div>
+                    <div className="relative">
+                      <Image 
+                        src="/code_screenshot.webp" 
+                        alt="Ops Teams Write IaC" 
+                        width={500} 
+                        height={300} 
+                        className="rounded-lg"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            <div className="mb-8">
-              <div className="bg-white rounded-lg shadow-md p-8">
-                <div className="text-sm font-medium text-gray-500 mb-2">3/3</div>
-                <h3 className="text-2xl font-bold mb-4">Devs Diagram to Provision</h3>
-                <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
-                    <p className="text-lg mb-4">
-                      Developers diagram what they want and your IaC modules are used to provision. Developers don&apos;t have to copy Helm Charts or Terraform Modules. They don&apos;t have brittle IaC pipelines. Instead, Massdriver uses your modules to provision and builds ephemeral CI/CD pipelines behind the scenes based on the tooling <em>in</em> your modules.
-                    </p>
-                    <p className="font-bold">
-                      Say goodbye to 100&apos;s of brittle IaC pipelines.
-                    </p>
-                  </div>
-                  <div className="relative">
-                    <Image 
-                      src="/diagram.webp"
-                      alt="Devs Diagram to Provision" 
-                      width={500} 
-                      height={300} 
-                      className="rounded-lg"
-                    />
+            {activeTab === 2 && (
+              <div className="mb-16">
+                <div className="bg-white rounded-lg shadow-md p-8">
+                  <div className="text-sm font-medium text-gray-500 mb-2">2/3</div>
+                  <h3 className="text-2xl font-bold mb-4">Ops Teams Publish Modules</h3>
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div className="order-2 md:order-1">
+                      <Image 
+                        src="/publish.webp"
+                        alt="Ops Teams Publish Modules" 
+                        width={500} 
+                        height={300} 
+                        className="rounded-lg"
+                      />
+                    </div>
+                    <div className="order-1 md:order-2">
+                      <p className="text-lg mb-4">
+                        Bundled modules are published in the Massdriver Service Catalog, where developers can easily discover supported cloud services and applications with your organization&apos;s compliance, security, and guardrails in place.
+                      </p>
+                      <p className="font-bold">
+                        A central repository for provisioning, policy, and cost controls of your cloud resources.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            )}
 
-            <div className="flex justify-center space-x-4">
-              <button className="px-4 py-2 font-medium">1. Code</button>
-              <button className="px-4 py-2 font-medium">2. Publish</button>
-              <button className="px-4 py-2 font-medium">3. Diagram</button>
-            </div>
-          </div>
-        </section>
-
-        {/* Possibilities Section */}
-        <section className="py-16 px-6 bg-white">
-          <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-12">See What&apos;s Possible with Massdriver&apos;s IaC-Powered Platform</h2>
-            
-            <div className="flex flex-wrap justify-center gap-8 mb-12">
-              <div className="flex items-center">
-                <Image 
-                  src="/aws-partner.png" 
-                  alt="AWS Partner" 
-                  width={120} 
-                  height={60} 
-                />
+            {activeTab === 3 && (
+              <div className="mb-8">
+                <div className="bg-white rounded-lg shadow-md p-8">
+                  <div className="text-sm font-medium text-gray-500 mb-2">3/3</div>
+                  <h3 className="text-2xl font-bold mb-4">Devs Diagram to Provision</h3>
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <p className="text-lg mb-4">
+                        Developers diagram what they want and your IaC modules are used to provision. Developers don&apos;t have to copy Helm Charts or Terraform Modules. They don&apos;t have brittle IaC pipelines. Instead, Massdriver uses your modules to provision and builds ephemeral CI/CD pipelines behind the scenes based on the tooling <em>in</em> your modules.
+                      </p>
+                      <p className="font-bold">
+                        Say goodbye to 100&apos;s of brittle IaC pipelines.
+                      </p>
+                    </div>
+                    <div className="relative">
+                      <Image 
+                        src="/diagram.webp"
+                        alt="Devs Diagram to Provision" 
+                        width={500} 
+                        height={300} 
+                        className="rounded-lg"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center">
-                <Image 
-                  src="/google-cloud.png"
-                  alt="Google Cloud Partner"
-                  width={120} 
-                  height={60} 
-                />
-              </div>
-              <div className="flex items-center">
-                <Image 
-                  src="/yc.png" 
-                  alt="Y Combinator" 
-                  width={120} 
-                  height={60} 
-                />
-              </div>
-              <div className="flex items-center">
-                <Image 
-                  src="/1984-vc.png" 
-                  alt="1984 VC" 
-                  width={120} 
-                  height={60} 
-                />
-              </div>
-            </div>
+            )}
           </div>
         </section>
 
@@ -241,7 +224,7 @@ export default function HomePage() {
                 <p className="mt-4 text-sm italic">GameStake saved 25% on their cloud costs by adopting Massdriver.</p>
                 <Link href="/case-study" className="text-blue-600 text-sm font-medium mt-2 inline-block">View GameStake Case Study</Link>
               </div>
-
+              
               {/* Testimonial 3 */}
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <p className="mb-4">We are partnering with innovative companies like Massdriver to help founders achieve more. As a part of Microsoft for Startups Founders Hub, startups can now receive access to Massdriver&apos;s productivity tools, designed to streamline cloud management and reduce infrastructure development time.</p>
@@ -251,6 +234,48 @@ export default function HomePage() {
                     <p className="text-sm text-gray-600">Director</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Possibilities Section */}
+        <section className="py-16 px-6 bg-white">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-12">See What&apos;s Possible with Massdriver&apos;s IaC-Powered Platform</h2>
+            
+            <div className="flex flex-wrap justify-center gap-8 mb-12">
+              <div className="flex items-center">
+                <Image 
+                  src="/aws-partner.png" 
+                  alt="AWS Partner" 
+                  width={60} 
+                  height={60} 
+                />
+              </div>
+              <div className="flex items-center">
+                <Image 
+                  src="/google-cloud.png"
+                  alt="Google Cloud Partner"
+                  width={60} 
+                  height={60} 
+                />
+              </div>
+              <div className="flex items-center">
+                <Image 
+                  src="/yc.png" 
+                  alt="Y Combinator" 
+                  width={60} 
+                  height={60} 
+                />
+              </div>
+              <div className="flex items-center">
+                <Image 
+                  src="/1984-vc.png" 
+                  alt="1984 VC" 
+                  width={60} 
+                  height={60} 
+                />
               </div>
             </div>
           </div>
