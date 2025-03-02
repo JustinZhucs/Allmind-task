@@ -2,15 +2,19 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState(1);
 
+  const handleTabChange = (tabNumber: SetStateAction<number>) => {
+    setActiveTab(tabNumber);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header/Navigation */}
-      <header className="bg-white py-4 px-6 flex justify-between items-center shadow-sm">
+      {/* Header/Navigation - Fixed on scroll */}
+      <header className="bg-white py-4 px-6 flex justify-between items-center shadow-sm fixed top-0 left-0 right-0 z-50">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
             <Image 
@@ -63,6 +67,9 @@ export default function HomePage() {
         </div>
       </header>
 
+      {/* Add padding to account for fixed header */}
+      <div className="pt-16"></div>
+
       <main>
         {/* Hero Section - Centered */}
         <section className="bg-white py-16 px-6">
@@ -89,19 +96,19 @@ export default function HomePage() {
             <div className="flex justify-center space-x-4 text-white mb-10">
               <button 
                 className={`px-4 py-2 font-medium ${activeTab === 1 ? 'border-b-2 border-white' : ''}`}
-                onClick={() => setActiveTab(1)}
+                onClick={() => handleTabChange(1)}
               >
                 1. Code
               </button>
               <button 
                 className={`px-4 py-2 font-medium ${activeTab === 2 ? 'border-b-2 border-white' : ''}`}
-                onClick={() => setActiveTab(2)}
+                onClick={() => handleTabChange(2)}
               >
                 2. Publish
               </button>
               <button 
                 className={`px-4 py-2 font-medium ${activeTab === 3 ? 'border-b-2 border-white' : ''}`}
-                onClick={() => setActiveTab(3)}
+                onClick={() => handleTabChange(3)}
               >
                 3. Diagram
               </button>
@@ -351,7 +358,7 @@ export default function HomePage() {
         </section>
 
         {/* Case Study Section */}
-        <section className="py-16 px-6 bg-gray-50">
+        <section className="py-16 px-6 bg-sky-950">
           <div className="max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-md p-8">
               <h2 className="text-3xl font-bold mb-4">How AMD Global Telemedicine Reduced Software Release Effort by 89%</h2>
@@ -410,11 +417,11 @@ export default function HomePage() {
         </section>
 
         {/* Certification Section */}
-        <section className="py-16 px-6 bg-gray-50">
+        <section className="py-16 px-6 bg-sky-900 text-white">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">We know the cloud</h2>
             
-            <blockquote className="bg-white p-8 rounded-lg shadow-md mb-12">
+            <blockquote className="bg-white text-black p-8 rounded-lg shadow-md mb-12">
               <p className="italic mb-4">&ldquo;We are partnering with innovative companies like Massdriver to help founders achieve more. As a part of Microsoft for Startups Founders Hub, startups can now receive access to Massdriver&apos;s productivity tools, designed to streamline cloud management and reduce infrastructure development time.&rdquo;</p>
               <div className="flex items-center">
                 <div>
@@ -425,7 +432,7 @@ export default function HomePage() {
             </blockquote>
             
             <div className="text-center">
-              <p className="text-gray-700 mb-8">Built by a team of world-class cloud certified experts. Massdriver has passed rigorous CIS benchmarks for your favorite cloud&apos;s partnership network.</p>
+              <p className="text-gray-200 mb-8">Built by a team of world-class cloud certified experts. Massdriver has passed rigorous CIS benchmarks for your favorite cloud&apos;s partnership network.</p>
               
               <div className="flex flex-wrap justify-center gap-8">
                 <Image 
