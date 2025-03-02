@@ -7,7 +7,15 @@ export default function HomePage() {
       {/* Header/Navigation */}
       <header className="bg-white py-4 px-6 flex justify-between items-center shadow-sm">
         <div className="flex items-center">
-          <Link href="/" className="text-2xl font-bold">Massdriver</Link>
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/logo.svg" 
+              alt="Massdriver Logo" 
+              width={180} 
+              height={40} 
+              priority
+            />
+          </Link>
         </div>
         <nav className="hidden md:flex space-x-6">
           <div className="relative group">
@@ -51,18 +59,18 @@ export default function HomePage() {
       </header>
 
       <main>
-        {/* Hero Section */}
+        {/* Hero Section - Centered */}
         <section className="bg-white py-16 px-6">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">DevOps Without the Red Tape</h1>
-            <p className="text-xl md:text-2xl max-w-3xl mb-8">
+            <p className="text-xl md:text-2xl mx-auto max-w-3xl mb-8">
               At Massdriver, we believe in prevention, not permission.<br />
               <br />
               Our platform lets &ldquo;ops&rdquo; teams encode their expertise and your organization&apos;s non-negotiables into preapproved self-service infrastructure powered by the IaC tools you already know.<br />
               <br />
               Massdriver—Fast by default. Safe by design.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
               <Link href="/demo" className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium text-center">See a demo</Link>
               <Link href="/trial" className="border border-blue-600 text-blue-600 px-6 py-3 rounded-md font-medium text-center">Start free trial</Link>
             </div>
@@ -78,12 +86,25 @@ export default function HomePage() {
               <div className="bg-white rounded-lg shadow-md p-8">
                 <div className="text-sm font-medium text-gray-500 mb-2">1/3</div>
                 <h3 className="text-2xl font-bold mb-4">Ops Teams Write IaC</h3>
-                <p className="text-lg mb-4">
-                  DevOps and Platform teams use the infrastructure-as-code tools they know, such as Terraform / OpenTofu, Helm, or CloudFormation, and package them into use-case-specific modules with your policy tooling built in.
-                </p>
-                <p className="font-bold">
-                  Your IaC is no longer just config, its a functional software asset. Policy and cost tools are embedded, cutting down maintenance for Ops teams.
-                </p>
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <p className="text-lg mb-4">
+                      DevOps and Platform teams use the infrastructure-as-code tools they know, such as Terraform / OpenTofu, Helm, or CloudFormation, and package them into use-case-specific modules with your policy tooling built in.
+                    </p>
+                    <p className="font-bold">
+                      Your IaC is no longer just config, its a functional software asset. Policy and cost tools are embedded, cutting down maintenance for Ops teams.
+                    </p>
+                  </div>
+                  <div className="relative">
+                    <Image 
+                      src="/code_screenshot.webp" 
+                      alt="Ops Teams Write IaC" 
+                      width={500} 
+                      height={300} 
+                      className="rounded-lg"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -91,12 +112,25 @@ export default function HomePage() {
               <div className="bg-white rounded-lg shadow-md p-8">
                 <div className="text-sm font-medium text-gray-500 mb-2">2/3</div>
                 <h3 className="text-2xl font-bold mb-4">Ops Teams Publish Modules</h3>
-                <p className="text-lg mb-4">
-                  Bundled modules are published in the Massdriver Service Catalog, where developers can easily discover supported cloud services and applications with your organization&apos;s compliance, security, and guardrails in place.
-                </p>
-                <p className="font-bold">
-                  A central repository for provisioning, policy, and cost controls of your cloud resources.
-                </p>
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="order-2 md:order-1">
+                    <Image 
+                      src="/publish.webp"
+                      alt="Ops Teams Publish Modules" 
+                      width={500} 
+                      height={300} 
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <div className="order-1 md:order-2">
+                    <p className="text-lg mb-4">
+                      Bundled modules are published in the Massdriver Service Catalog, where developers can easily discover supported cloud services and applications with your organization&apos;s compliance, security, and guardrails in place.
+                    </p>
+                    <p className="font-bold">
+                      A central repository for provisioning, policy, and cost controls of your cloud resources.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -104,12 +138,25 @@ export default function HomePage() {
               <div className="bg-white rounded-lg shadow-md p-8">
                 <div className="text-sm font-medium text-gray-500 mb-2">3/3</div>
                 <h3 className="text-2xl font-bold mb-4">Devs Diagram to Provision</h3>
-                <p className="text-lg mb-4">
-                  Developers diagram what they want and your IaC modules are used to provision. Developers don&apos;t have to copy Helm Charts or Terraform Modules. They don&apos;t have brittle IaC pipelines. Instead, Massdriver uses your modules to provision and builds ephemeral CI/CD pipelines behind the scenes based on the tooling <em>in</em> your modules.
-                </p>
-                <p className="font-bold">
-                  Say goodbye to 100&apos;s of brittle IaC pipelines.
-                </p>
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <p className="text-lg mb-4">
+                      Developers diagram what they want and your IaC modules are used to provision. Developers don&apos;t have to copy Helm Charts or Terraform Modules. They don&apos;t have brittle IaC pipelines. Instead, Massdriver uses your modules to provision and builds ephemeral CI/CD pipelines behind the scenes based on the tooling <em>in</em> your modules.
+                    </p>
+                    <p className="font-bold">
+                      Say goodbye to 100&apos;s of brittle IaC pipelines.
+                    </p>
+                  </div>
+                  <div className="relative">
+                    <Image 
+                      src="/diagram.webp"
+                      alt="Devs Diagram to Provision" 
+                      width={500} 
+                      height={300} 
+                      className="rounded-lg"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -128,16 +175,36 @@ export default function HomePage() {
             
             <div className="flex flex-wrap justify-center gap-8 mb-12">
               <div className="flex items-center">
-                <span className="font-medium">Cloud Certified</span>
+                <Image 
+                  src="/aws-partner.png" 
+                  alt="AWS Partner" 
+                  width={120} 
+                  height={60} 
+                />
               </div>
               <div className="flex items-center">
-                <span className="font-medium">VC Backed</span>
+                <Image 
+                  src="/google-cloud.png"
+                  alt="Google Cloud Partner"
+                  width={120} 
+                  height={60} 
+                />
               </div>
               <div className="flex items-center">
-                <span>Y Combinator</span>
+                <Image 
+                  src="/yc.png" 
+                  alt="Y Combinator" 
+                  width={120} 
+                  height={60} 
+                />
               </div>
               <div className="flex items-center">
-                <span>1984 VC</span>
+                <Image 
+                  src="/1984-vc.png" 
+                  alt="1984 VC" 
+                  width={120} 
+                  height={60} 
+                />
               </div>
             </div>
           </div>
@@ -203,15 +270,27 @@ export default function HomePage() {
                 <p className="mb-4">Enable developers to self-serve cloud infrastructure from approved IaC templates in a central catalog.</p>
                 <p className="mb-4">Developers drag, connect, and deploy. No more last minute Jira tickets to the DevOps team.</p>
               </div>
-              <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                <span className="text-gray-500">Video Placeholder</span>
+              <div className="relative">
+                <Image 
+                  src="/video1.gif" 
+                  alt="Cloud Service Catalog" 
+                  width={600} 
+                  height={400} 
+                  className="rounded-lg shadow-lg"
+                />
               </div>
             </div>
 
             {/* Feature 2 */}
             <div className="mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="order-2 md:order-1 bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                <span className="text-gray-500">Video Placeholder</span>
+              <div className="order-2 md:order-1 relative">
+                <Image 
+                  src="/video2.gif" 
+                  alt="Cost & Health Insights" 
+                  width={600} 
+                  height={400} 
+                  className="rounded-lg shadow-lg"
+                />
               </div>
               <div className="order-1 md:order-2">
                 <h3 className="text-2xl font-bold mb-4">Cost & Health Insights</h3>
@@ -229,8 +308,14 @@ export default function HomePage() {
                 <p className="mb-4">Say goodbye to the chaos of scattered resources and hello to seamless, organized control.</p>
                 <p className="mb-4">No more hunting for assets or piecing together the puzzle of your cloud infrastructure.</p>
               </div>
-              <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                <span className="text-gray-500">Video Placeholder</span>
+              <div className="relative">
+                <Image 
+                  src="/video3.gif" 
+                  alt="Inventory & Audit Records" 
+                  width={600} 
+                  height={400} 
+                  className="rounded-lg shadow-lg"
+                />
               </div>
             </div>
 
@@ -270,8 +355,13 @@ export default function HomePage() {
                   <Link href="/case-study" className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium inline-block">View Case Study</Link>
                 </div>
                 
-                <div className="md:w-1/3 bg-gray-200 rounded-lg flex items-center justify-center h-64">
-                  <span className="text-gray-500">Image Placeholder</span>
+                <div className="md:w-1/3 relative">
+                  <Image 
+                    src="/amd.png" 
+                    alt="AMD Global Telemedicine Case Study" 
+                    width={400} 
+                    height={300} 
+                  />
                 </div>
               </div>
             </div>
@@ -281,6 +371,14 @@ export default function HomePage() {
         {/* Podcast Section */}
         <section className="py-12 px-6 bg-white">
           <div className="max-w-6xl mx-auto text-center">
+            <div className="flex items-center justify-center mb-6">
+              <Image 
+                src="/platform.svg" 
+                alt="Massdriver Podcast" 
+                width={300} 
+                height={120} 
+              />
+            </div>
             <p className="mb-4">This podcast caters to professionals and enthusiasts passionate about the intricacies of platform architecture, cloud operations, and scaling DevOps practices.</p>
             <Link href="/podcast" className="text-blue-600 font-bold">LISTEN TO THE PODCAST</Link>
           </div>
@@ -293,13 +391,38 @@ export default function HomePage() {
             
             <blockquote className="bg-white p-8 rounded-lg shadow-md mb-12">
               <p className="italic mb-4">&ldquo;We are partnering with innovative companies like Massdriver to help founders achieve more. As a part of Microsoft for Startups Founders Hub, startups can now receive access to Massdriver&apos;s productivity tools, designed to streamline cloud management and reduce infrastructure development time.&rdquo;</p>
-              <div>
-                <p className="font-bold">Kirk Safford</p>
-                <p>Director, Microsoft for Startups</p>
+              <div className="flex items-center">
+                <div>
+                  <p className="font-bold">Kirk Safford</p>
+                  <p>Director, Microsoft for Startups</p>
+                </div>
               </div>
             </blockquote>
             
-            <p className="text-center">Built by a team of world-class cloud certified experts. Massdriver has passed rigorous CIS benchmarks for your favorite cloud&apos;s partnership network.</p>
+            <div className="text-center">
+              <p className="text-gray-700 mb-8">Built by a team of world-class cloud certified experts. Massdriver has passed rigorous CIS benchmarks for your favorite cloud&apos;s partnership network.</p>
+              
+              <div className="flex flex-wrap justify-center gap-8">
+                <Image 
+                  src="/aws-partner.png"
+                  alt="AWS Certified" 
+                  width={60} 
+                  height={60} 
+                />
+                <Image 
+                  src="/microsoft-startups.svg"
+                  alt="Azure Certified" 
+                  width={120} 
+                  height={60} 
+                />
+                <Image 
+                  src="/google-cloud.png" 
+                  alt="GCP Certified" 
+                  width={60} 
+                  height={60} 
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -341,8 +464,17 @@ export default function HomePage() {
       <footer className="bg-white py-12 px-6 border-t">
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center mb-8">
+            <div className="flex items-center">
+              <div className="w-4 h-4 rounded-full bg-green-500 mr-2"></div>
+              <p className="font-medium text-gray-700">System Operational</p>
+            </div>
             <div>
-              <p className="font-medium">System Operational</p>
+              <Image 
+                src="/logo.svg" 
+                alt="Massdriver Logo" 
+                width={140} 
+                height={30} 
+              />
             </div>
           </div>
           
